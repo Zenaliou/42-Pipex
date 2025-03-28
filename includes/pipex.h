@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niclee <niclee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 18:35:57 by niclee            #+#    #+#             */
-/*   Updated: 2025/03/27 19:26:46 by niclee           ###   ########.fr       */
+/*   Created: 2025/03/27 19:09:51 by niclee            #+#    #+#             */
+/*   Updated: 2025/03/27 19:11:39 by niclee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
-{
-	// a faire le envp
-}
+#ifndef PIPEX_H
+# define PIPEX_H
+
+# include "libft.h"
+# include "ft_printf.h"
+# include ""
+
+
+#endif 
