@@ -7,7 +7,7 @@ char    *get_cmd_path(char *cmd, char **envp)
     int     i;
 
     i = 0;
-    while (envp[i] && strncmp(envp[i], "PATH=", 5) != 0)
+    while (envp[i] && ft_strncmp(envp[i], "PATH=", 5) != 0)
         i++;
     if (!envp[i])
         return (NULL);
