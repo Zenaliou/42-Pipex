@@ -41,9 +41,9 @@ void    execute_command(char *cmd, char **envp)
     cmd_path = get_cmd_path(args[0], envp);
     if (!cmd_path)
     {
-        ft_putstr_fd("Command not found: ", 2);
-        ft_putstr_fd(args[0], 2);
-        ft_putstr_fd("\n", 2);
+        ft_printf("Command not found: ");
+        ft_printf(args[0]);
+        ft_printf("\n");
         exit(EXIT_FAILURE);
     }
     execve(cmd_path, args, envp);
@@ -64,7 +64,7 @@ void    here_doc_mode(char *limiter)
     }
     while (1)
     {
-        ft_putstr_fd("heredoc> ", 1);
+        ft_printf("heredoc> ");
         line = get_next_line(0);
         if (!line || strcmp(line, limiter) == 0)
             break;

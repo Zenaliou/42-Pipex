@@ -45,14 +45,14 @@ int main(int argc, char **argv, char **envp)
 {
     if (argc < 5)
     {
-        ft_putstr_fd("Usage: ./pipex infile cmd1 cmd2 ... outfile\n", 2);
+        ft_printf("Usage: ./pipex infile cmd1 cmd2 ... outfile\n");
         return (EXIT_FAILURE);
     }
-    if (strcmp(argv[1], "here_doc") == 0)
+    if (ft_strcmp(argv[1], "here_doc") == 0)
     {
         if (argc < 6)
         {
-            ft_putstr_fd("Usage: ./pipex here_doc LIMITER cmd1 cmd2 ... outfile\n", 2);
+            ft_printf("Usage: ./pipex here_doc LIMITER cmd1 cmd2 ... outfile\n");
             return (EXIT_FAILURE);
         }
         here_doc_mode(argv[2]);
