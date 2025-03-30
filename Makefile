@@ -1,10 +1,10 @@
 NAME		=	pipex
 
-CFLAGS		=	-Wall -Werror -Wextra -Iincludes -g3 -O2 - O3
+CFLAGS		=	-Wall -Werror -Wextra -Iincludes -g3
 
-SRCS		=	src/..
+SRCS		=	src/pipex.c src/utils.c GNL/get_next_line.c GNL/get_next_line_utils.c
 
-OBJs		=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
 
 INCLUDES	= 	-I includes -I libft -I ft_printf
 
@@ -12,29 +12,29 @@ LIBFT		=	libft/libft.a
 
 FT_PRINTF	=	ft_printf/libftprintf.a
 
-all:		$(NAME)
+all: $(NAME)
 
-$(NAME):	$(OBJS) $(LIBFT) $(FT_PRINTF)
-			$(CC) $(CFLAGS) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 
 $(LIBFT):
-			make -C libft
+	make -C libft
 
 $(FT_PRINTF):
-			make -C ft_printf
+	make -C ft_printf
 
 %.o: %.c
-			$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-			rm -f $(OBJS)
-			make -C libft clean
-			make -C ft_printf clean
+	rm -f $(OBJS) $(BONUS_OBJS)
+	make -C libft clean
+	make -C ft_printf clean
 
 fclean: clean
-			rm -f $(NAME)
-			make -C libft fclean
-			make -C ft_printf fclean
+	rm -f $(NAME)
+	make -C libft fclean
+	make -C ft_printf fclean
 
 re: fclean all
 
