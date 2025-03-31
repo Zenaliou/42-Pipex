@@ -66,7 +66,7 @@ void    here_doc_mode(char *limiter)
     {
         ft_printf("heredoc> ");
         line = get_next_line(0);
-        if (!line || strcmp(line, limiter) == 0)
+        if (!line || ft_strncmp(line, limiter, ft_strlen(limiter)) == 0)
             break;
         write(fd, line, strlen(line));
         free(line);

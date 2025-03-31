@@ -12,6 +12,7 @@ void    multiple_pipes(int argc, char **argv, char **envp)
     pid_t pid;
     int infile;
     int outfile;
+    int doc_tmp;
 
     infile = open(argv[1], O_RDONLY);
     outfile = open(argv[argc - 1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
